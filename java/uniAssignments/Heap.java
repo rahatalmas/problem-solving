@@ -2,12 +2,6 @@ import java.util.*;
 
 public class Heap {
 
-    static void swap(int a,int b){
-        int temp = a;
-        a=b;
-        b=temp;
-    }
-
     static void maxHeapify(int i,int arr[],int n){
         int largest = i;
         int l = (2*i)+1;

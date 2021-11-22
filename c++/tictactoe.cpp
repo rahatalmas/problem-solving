@@ -20,7 +20,22 @@ void putMark(int i,int j){
         currentPlayer = -currentPlayer;
     }else{
         cout<<"already filled"<<endl;
-        cin>>i>>j;
     }
+}
+
+bool isWin(int mark){
+    int win = 3*mark;
+    return ("updating...") ;
+}
+
+int getWinner(){
+
+}
+
+void printBoard(){
+
+}
+
+int main(){
     
 }
