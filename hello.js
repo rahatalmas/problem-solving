@@ -1,5 +1,5 @@
-const h = () =>{
+const mars = () =>{
     console.log("hello world")
 }
 
-h();
+mars();
