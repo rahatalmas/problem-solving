@@ -1,7 +1,8 @@
 /*
+   // Closure 
    -> Lexical Scope : defines how variable names are resolved in nested function
-   -> Nested(child) Function : have access to the scope of their parent function
-   -> this is ofter confused with closure , but lexical scope is only an important 
+   -> Nested(child) Function have access to the scope of their parent function
+   -> this is often confused with closure , but lexical scope is only an important 
       part of closure...
 */
 
@@ -24,10 +25,12 @@ const parentFunction = () =>{
 
 parentFunction();
 
-// this the avobe function is not closure ... 
+// the avobe function is not closure ... 
 // w3schools : "A closure is a function having access to the parent scope",
 // even after the parent function has closed. "
 // A closure is created when we define a function, not when a function is executed.
+// the variable values of the parent function or global scope can change the child function 
+// without the parent function every time .
 
 // lets define closure function ... 
 
