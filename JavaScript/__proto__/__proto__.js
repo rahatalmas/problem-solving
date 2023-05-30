@@ -86,4 +86,23 @@ for(let key in luxuryCar){
     console.log(key);
 }
 
+//object constructor
+
+function Person(hobby){
+    this.hobby = hobby;
+    this.like = true;
+}
+
+Person.prototype.plays = function(){
+    return `i love to play ${this.hobby}`;
+}
+
+const luffy = new Person("football");
+console.log("object constructor :");
+console.log(luffy);
+console.log(luffy.plays());
+console.log(luffy.__proto__);
+console.log(luffy.__proto__ === Person.prototype)
+
+// ES6 classes example of inheritance
 
