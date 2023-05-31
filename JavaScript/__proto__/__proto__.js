@@ -106,3 +106,21 @@ console.log(luffy.__proto__ === Person.prototype)
 
 // ES6 classes example of inheritance
 
+class Birds{
+    constructor(name){
+        this.name = name;
+    }
+}
+
+class Parrot extends Birds{
+    constructor(name,fly){
+        super(name);
+        this.fly = fly;
+    }
+    sound(){
+        console.log("sound of parrot is beautiful");
+    }
+}
+
+let A = new Parrot("picco",true);
+console.log(A);
