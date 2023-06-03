@@ -3,10 +3,10 @@ import cors from 'cors';
 const PORT = 8080;
 const app = express();
 import  prisma from './prisma/prisma.js';
+
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors());
-
 
 app.get("/",async (req,res)=>{
     const products = await prisma.Products.findMany({});
