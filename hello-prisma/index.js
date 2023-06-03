@@ -1,16 +1,15 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 const PORT = 8080;
 const app = express();
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient();
+import  prisma from './prisma/prisma.js';
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors());
 
 
 app.get("/",async (req,res)=>{
-    products = await prisma.Products.findMany({});
+    const products = await prisma.Products.findMany({});
     res.send(products);
     console.log(products);
 })
@@ -26,6 +25,16 @@ app.post("/product", async (req,res,next)=>{
       res.send(product)
 })
 
+app.post("/blog", async (req,res,next)=>{
+  const blog = await prisma.Blogs.create({
+    data: {
+      title: req.body.title,
+      content: req.body.content,
+    },
+  })
+  console.log(blog)
+  res.send(blog)
+})
 
 app.listen(PORT,()=>{
     console.log("server running...")

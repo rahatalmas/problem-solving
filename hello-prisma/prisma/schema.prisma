@@ -14,10 +14,16 @@ model Products {
   available Boolean @default(true)
 }
 
-model new_User {
+model Users {
   id       Int     @id @default(autoincrement())
   email    String
   userName String
   password String
   admin    Boolean @default(false)
+}
+
+model Blogs{
+  id Int @id @default(autoincrement())
+  title String @unique
+  content String
 }
