@@ -8,7 +8,8 @@
  
 import Car from "./car";
 import fly from "./bird";
-import { owl,parrot,food } from "./bird";
+import { owl,parrot } from "./bird";
+import {food as birdFod} from './bird'; // rename the function 
 
 //const Car = require('./car.js')
 class Audi extends Car{
