@@ -1,0 +1,22 @@
+*** javaScript Provides 8 different Data types:
+    1 -> undefined
+    2 -> null
+    3 -> boolean
+    4 -> string
+    5 -> symbol
+    6 -> bigint
+    7 -> number
+    8 -> object
+
+*** when js variables are declared they have an initial value of undefined
+*** mathematical operation with undefined varible will result NaN.
+
+*** var , let and const keywords are  used to decalre variables
+*** difference between var and let is :
+    -> we can replace the data of a variable that is declared using var 
+    -> if you try to replace the data of a variable declared using let it will show error
+
+*** const keyword has all the features that let have . but variables declared with const keywords are read only..
+
+*** Note: It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). 
+*** Note: The remainder operator is sometimes incorrectly referred to as the modulus operator. It is very similar to modulus, but does not work properly with negative numbers.
