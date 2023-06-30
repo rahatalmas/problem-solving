@@ -1,6 +1,6 @@
 const obj = {
     name:'rahat almas',
-    crush_name:'Rabia Badhon',
+    crush_name:'R**** ***** ******',
     dept:'cse',
     her_dept:'pharmachy'
 }
