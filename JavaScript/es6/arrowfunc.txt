@@ -1,0 +1,191 @@
+Arrow Functions in JavaScript
+Arrow Functions
+These expressions lexically bind the this value while using less syntax than a typical function expression. Arrow functions are always anonymous.
+
+Here are some basic examples of arrow function syntax:
+
+(parameter) => {statements}
+parameter => {statements}
+parameter => expression
+parameter => {return expression}
+
+(param1, param2, ..., paramN) => {statements}
+(param1, param2, ..., paramN) => expression
+(param1, param2, ..., paramN) => {return expression}
+EXAMPLE
+Let's look at some simple ways to apply this syntax:
+
+1
+'use strict';
+2
+​
+3
+const makeArray = (...values) => { return values };
+4
+console.log('Array:', makeArray(1, 2, 3, 4));
+5
+console.log('Array:', makeArray(1, 2, 3, 4, 5, 6));
+6
+​
+7
+const getSum = (a, b) => { return a + b };
+8
+console.log('1 + 2 =', getSum(1, 2));
+9
+​
+10
+const greeting = 'Hello, World.';
+11
+const capitalize = (myString) => { return myString.toUpperCase() };
+12
+console.log(greeting, '=>', capitalize(greeting));
+RunOutput
+Using Arrow Functions
+Let's look at some ways we can use arrow functions to make our code shorter.
+
+EXAMPLE
+Sum the Elements of an Array
+While we can certainly iterate over an array and sum each value, we can also use the reduce function.
+
+1
+'use strict';
+2
+​
+3
+const arr = [1, 2, 3, 4, 5];
+4
+​
+5
+const sum = arr.reduce(function (a, b) {
+6
+    return a + b;
+7
+}, 0);
+8
+​
+9
+console.log('Array:', arr);
+10
+console.log('Sum:', sum);
+RunOutput
+Now, let's reduce the length of our code using an arrow function:
+
+1
+'use strict';
+2
+​
+3
+const arr = [1, 2, 3, 4, 5];
+4
+​
+5
+const sum = arr.reduce((a, b) => { return a + b }, 0);
+6
+​
+7
+console.log('Array:', arr);
+8
+console.log('Sum:', sum);
+RunOutput
+Let's further reduce it by getting rid of the return:
+
+1
+'use strict';
+2
+​
+3
+const arr = [1, 2, 3, 4, 5];
+4
+​
+5
+const sum = arr.reduce((a, b) => a + b, 0);
+6
+​
+7
+console.log('Array:', arr);
+8
+console.log('Sum:', sum);
+RunOutput
+EXAMPLE
+Find the Length of Strings in an Array
+Let's take an array of strings and use it to create a new array containing the respective lengths of its elements.
+
+1
+'use strict';
+2
+​
+3
+const arr = ['first', 'second', 'third', 'fourth', 'fifth'];
+4
+​
+5
+const len = arr.map(function(s) { return s.length });
+6
+​
+7
+console.log('Array:', arr);
+8
+console.log('Lengths:', len);
+RunOutput
+Now, let's reduce the length of our code using an arrow function:
+
+1
+'use strict';
+2
+​
+3
+const arr = ['first', 'second', 'third', 'fourth', 'fifth'];
+4
+​
+5
+const len = arr.map(s => s.length);
+6
+​
+7
+console.log('Array:', arr);
+8
+console.log('Lengths:', len);
+RunOutput
+EXAMPLE
+Find Array Elements Greater Than a Value
+Let's find all the elements in an array that are greater than  and add them to a new array.
+
+1
+'use strict';
+2
+​
+3
+const arr = [1, 2, 3, 4, 5];
+4
+​
+5
+const greaterThan3 = arr.filter(function(a) {
+6
+    return a > 3;
+7
+});
+8
+​
+9
+console.log('Array:', arr);
+10
+console.log('Elements Greater Than 3:', greaterThan3);
+RunOutput
+Now, let's reduce the length of our code using an arrow function:
+
+1
+'use strict';
+2
+​
+3
+const arr = [1, 2, 3, 4, 5];
+4
+​
+5
+const greaterThan3 = arr.filter(a => a > 3);
+6
+​
+7
+console.log('Array:', arr);
+8
+console.log('Elements Greater Than 3:', greaterThan3);

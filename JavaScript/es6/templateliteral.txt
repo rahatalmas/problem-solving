@@ -1,0 +1,159 @@
+JavaScript: Template Literals
+Template Literals
+Template literals (formerly known as template strings) are string literals that allow for embedded expressions. We typically use them to express strings spanning multiple lines or for string interpolation, which essentially allows us to create a template with one or more placeholders for inserting variable text at a later time.
+
+While traditional strings are wrapped in single or double quotes, template literals are wrapped in backtick (`) characters. A template literal can contain placeholders, which are preceded by a dollar sign ($) and wrapped in curly braces ({}). For example, in the template literal `${expression}`, the  text between the placeholders is passed to a function. The default function simply concatenates the template literal's parts into a single string.
+
+Any time we see an expression preceding a template literal, we call the expression a tag and the template string a tagged template literal. In these instances, we call the tag expression (typically a function) with the processed template literal, which we can then manipulate before outputting the final string.
+
+Multi-line Strings
+EXAMPLE
+Print a Multi-Line String Using Normal Strings
+1
+console.log("first line\n" + "second line");
+2
+console.log("first line" + "\nsecond line");
+3
+console.log("first line\nsecond line");
+RunOutput
+first line
+second line
+first line
+second line
+first line
+second line
+
+Print a Multi-Line String Using Template Literals
+1
+console.log(`first line
+2
+second line`);
+RunOutput
+first line
+second line
+
+Regardless of which approach we choose, the output is the same.
+
+Expression Interpolation
+EXAMPLE
+Print a Line Using Normal Strings
+1
+const a = 2;
+2
+const b = 3;
+3
+​
+4
+console.log(
+5
+    'The sum of a and b is ' + (a + b) + '.\n' 
+6
+    + 'The product of a and b is ' + (a * b) + '.'
+7
+);
+RunOutput
+Print a Line Using Template Literals
+1
+const a = 2;
+2
+const b = 3;
+3
+​
+4
+console.log(`The sum of a and b is ${a + b}. 
+5
+The product of a and b is ${a * b}.`);
+RunOutput
+Tagged Template Literals
+Tagged template literals allow us to use a function to modify the output of a template literal. In this construct:
+
+The first argument contains an array of string literals.
+The subsequently processed arguments are the values of the substitution expressions.
+After processing all the arguments, the function returns the manipulated string.
+
+EXAMPLE
+1
+var a = 5;
+2
+var b = 10;
+3
+​
+4
+function foo(strings, ...values) {
+5
+    console.log("." + strings[0] + ".");
+6
+    console.log("." + strings[1] + ".");
+7
+    console.log("." + strings[2] + ".");
+8
+    console.log("." + strings[3] + ".");
+9
+    console.log(values[0]);
+10
+    console.log(values[1]);
+11
+    console.log(values[2]);
+12
+}
+13
+​
+14
+foo`Sum ${a + b}
+15
+Product ${a * b}
+16
+Division ${b / a}`;
+RunOutput
+.Sum .
+.
+Product .
+.
+Division .
+..
+15
+50
+2
+
+Now we can see that, the total number of string literals is one more than the number of total cooked expressions. The first string literal is the string before the first cooked expression, the last string literal is the string after the last cooked expression and other literals are in between the cooked expressions.
+
+We can also return from tagged templates:
+
+EXAMPLE
+     
+1
+var a = 5;
+2
+var b = 10;
+3
+​
+4
+function foo(strings, ...values) {
+5
+    let a = values[0];
+6
+    let b = values[1];
+7
+​
+8
+    return `Sum ${a + b}
+9
+Product ${a * b} 
+10
+Division ${b / a}`;
+11
+}
+12
+​
+13
+console.log(foo`Num1 ${a + 10}
+14
+Num2 ${b * 2} 
+15
+Num3 ${b / a}`);
+RunOutput
+Sum 35
+Product 300 
+Division 1.3333333333333333
+
+ 

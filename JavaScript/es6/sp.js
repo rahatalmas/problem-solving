@@ -1,7 +1,7 @@
 let a = [1,2,3,4,5];
 let b = [...a,6];
 console.log(a,b);
-
+console.log(...a); // outputs elements...
 let c = [a,b]
 let d = [...c];
 //console.log(d);
