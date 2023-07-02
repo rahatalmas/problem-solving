@@ -25,7 +25,22 @@ class Book {
       this._author = updatedAuthor;
     }
   }
+
+  class HarryPoter extends Book{
+    constructor(storyName){
+      //super(author);
+      super();
+      this.storyName = storyName;
+    }
+  }
+
+
+
   const novel = new Book('anonymous');
+  const ps = new HarryPoter("storyname");
+  console.log(ps._author); // undefined because of private variable
+  console.log(ps.writter); // undefined
+  console.log(ps.storyName);
   console.log(novel.writer);
   novel.writer = 'newAuthor';
   console.log(novel.writer);

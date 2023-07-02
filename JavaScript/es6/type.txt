@@ -1,0 +1,2 @@
+type = "common-js"
+type = "module"

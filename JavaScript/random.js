@@ -3,3 +3,9 @@ function randomRange(myMin, myMax) {
 }
 
 console.log(randomRange(10,20));
+
+let a = '5';
+console.log(parseInt(a));
+console.log(typeof(a));
+console.log(typeof(parseInt(a)));
+

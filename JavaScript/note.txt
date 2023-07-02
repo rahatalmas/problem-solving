@@ -20,3 +20,43 @@
 
 *** Note: It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). 
 *** Note: The remainder operator is sometimes incorrectly referred to as the modulus operator. It is very similar to modulus, but does not work properly with negative numbers.
+*** Escape Sequences in Strings
+Quotes are not the only characters that can be escaped inside a string. Escape sequences allow you to use characters you may not otherwise be able to use in a string.
+
+Code	Output
+\'	single quote
+\"	double quote
+\\	backslash
+\n	newline
+\t	tab
+\r	carriage return
+\b	backspace
+\f	form feed
+Note that the backslash itself must be escaped in order to display as a backslash.
+
+
+*** string concatenation :
+  1 -> using + operator
+       a = "hi"
+       b = "hello"
+       c = a+b 
+  2 -> using += operatorf
+        a+=b
+  3 -> 
+
+*** we can find a length of a string using .length 
+      console.log(a.length);
+*** using the backet [] notation we can access the characters of a string 
+       console.log(a[0])
+
+*** In JavaScript, String values are immutable, which means that they cannot be altered once created.
+
+For example, the following code will produce an error because the letter B in the string Bob cannot be changed to the letter J:
+
+let myStr = "Bob";
+myStr[0] = "J";
+Note that this does not mean that myStr could not be re-assigned. The only way to change myStr would be to assign it with a new value, like this:
+
+let myStr = "Bob";
+myStr = "Job";
+ 
