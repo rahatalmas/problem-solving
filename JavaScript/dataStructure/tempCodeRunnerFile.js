@@ -1,2 +1,2 @@
 
-l.insertHead(2);
+        this._size--;

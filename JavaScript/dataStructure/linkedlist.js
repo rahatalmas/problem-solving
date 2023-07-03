@@ -47,7 +47,14 @@ class LinkedList{
         return;
     }
     deletePos(pos){
-
+        let temp = this._head;
+        for(let i=1;i<pos-1;i++){
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        temp = null;
+        this._size--;
+        return;
     }
     deleteList(){
 
@@ -64,7 +71,7 @@ class LinkedList{
     }
 }
 
-l = new LinkedList();
+let l = new LinkedList();
 l.insertHead(6);
 l.insertHead(5);
 l.insertTail(7);
@@ -75,7 +82,11 @@ l.insertHead(2);
 l.insertHead(1);
 l.insertTail(9);
 l.insertHead(0);
+l.insertTail({name:"rahat",id:"3914"});
 l.updateList(10,10);
+l.updateList(10,9);
 let s = l.size();
 l.printList();
 console.log(`size of the list is : ${s}`);
+
+export default LinkedList;
