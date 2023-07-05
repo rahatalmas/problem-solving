@@ -1,15 +1,8 @@
+const getData = async (url) =>{
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+    //return data;
+}
 
-    let p = new Promise((resolve,reject)=>{
-        let flag = true;
-        if(flag){
-          resolve("Work Done, planet earth is now all yours ...");
-        }
-        reject("Sorry soilders i failed ...");
-    })
-
-    p.then(res=>{
-      console.log(res);
-    })
-    p.catch(err=>{
-      console.log(err);
-    })
+const d = getData("https://jsonplaceholder.typicode.com/posts");
