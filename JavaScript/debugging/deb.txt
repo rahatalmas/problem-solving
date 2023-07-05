@@ -1,0 +1,2 @@
+*** Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.
+*** There are many methods to use with console to output messages. log, warn, and clear to name a few.

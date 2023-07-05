@@ -1,12 +1,15 @@
-let f = async () =>{
+
     let p = new Promise((resolve,reject)=>{
         let flag = true;
         if(flag){
-          resolve("Work Done ...");
+          resolve("Work Done, planet earth is now all yours ...");
         }
         reject("Sorry soilders i failed ...");
     })
-    let d = await p;
-    return d;
-}
-console.log(f())
+
+    p.then(res=>{
+      console.log(res);
+    })
+    p.catch(err=>{
+      console.log(err);
+    })
