@@ -1,17 +1,22 @@
 const express = require('express');
-//require('dotenv').config();
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const app = express();
+const routes = require('./routes/routes.js');
 app.use(express.json());
 app.use(cookieParser());
-
-
-app.get("/",(req,res)=>{
-    res.setHeader('set-cookies',['name=howl;HttpOnly:true','movie=howls moving castles']);
-    //res.cookie('name','rahat',{httpOnly:true});
-    res.send(req.headers);
+app.use(bodyParser.json({limit: "50mb",}));
+// for parsing application/xwww-form-urlencoded
+app.use(bodyParser.urlencoded({limit: "50mb",extended: true,}));
+//res.setHeader('set-cookies','name=howl');
+//es.cookie('name','howl',{httpOnly:true});
+app.use("/",(req,res,next)=>{
+    console.log("i watch everything...");
+    next();
 })
 
-app.listen(8080,(req,res)=>{
+app.use("/",routes);
+
+app.listen(8000,(req,res)=>{
     console.log("server running...");
-})
+});
