@@ -19,11 +19,12 @@
         let text = document.getElementById("textInput").value;
         let file = document.getElementById("fileInput").files;
         console.log(file[0])
-        //let formData = new FormData();
-        //formData.append("userImage",file[0]);
-        let res = await fetch('http://localhost:8000/imageUpload',{
+        let formData = new FormData();
+        formData.append("file",file[0]);
+        //formData.append("name",text);
+        let res = await fetch('http://localhost:8000/fileUpload',{
             method:'POST',
-            body: new FormData(form)
+            body:formData
         });
         let msg = await res.json();
         console.log(msg)

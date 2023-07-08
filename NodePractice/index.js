@@ -11,22 +11,34 @@ const routes = require('./routes/routes.js');
 app.use(cookieParser());
 app.use(bodyParser.json({}));
 // for parsing application/xwww-form-urlencoded
-//app.use(bodyParser.urlencoded({extended: false})); //limit: "50mb",
+app.use(bodyParser.urlencoded({extended: true})); //limit: "50mb",
 app.use(cors());
 //res.setHeader('set-cookies','name=howl');
 //es.cookie('name','howl',{httpOnly:true}
 
-const upload = multer({dest:'public'});
 
 app.use("/",(req,res,next)=>{
     console.log("i watch everything...");
     next();
 })
+
+const storage = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,"public")
+    },
+    filename:(req,file,cb)=>{
+        cb(null,`${file.originalname}+${Math.random()*100}`)
+    }
+})
+
+const upload = multer({storage:storage});
+app.post('/fileUpload',upload.single("file"),(req,res)=>{
+    console.log(req.file)
+    res.send('file uploaded');
+})
+
 app.use('/files',express.static(path.join(__dirname,'public')));
 app.use('/images',express.static(path.join(__dirname,'public/images')));
-app.post("/fileUpload",upload.single('file'),(req,res)=>{
-    console.log(req.file);
-})
 app.use("/",routes);
 
 app.listen(8000,(req,res)=>{
