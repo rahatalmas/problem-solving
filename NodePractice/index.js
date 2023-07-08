@@ -1,4 +1,5 @@
 const path = require('path');
+const crypto = require('crypto');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -27,7 +28,10 @@ const storage = multer.diskStorage({
         cb(null,"public")
     },
     filename:(req,file,cb)=>{
-        cb(null,`${file.originalname}+${Math.random()*100}`)
+        crypto.pseudoRandomBytes(16, function (err, raw) {
+            if (err) return cb(err)
+            cb(null, raw.toString('hex') + path.extname(file.originalname))
+          })
     }
 })
 
