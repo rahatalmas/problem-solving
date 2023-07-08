@@ -22,20 +22,7 @@ app.use("/",(req,res,next)=>{
 app.use('/files',express.static(path.join(__dirname,'public')));
 app.use('/images',express.static(path.join(__dirname,'public/images')));
 
-const storage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,'/public/images');
-    },
-    filename:function (req,file,cb){
-        cb(`${file.fieldname}-${Date.now()}${Math.random()*1000}`);
-    }
-})
-const upload = multer({storage:storage});
-
 app.use("/",routes);
-app.post("/imageUpload",upload.single('myfile'),(req,res)=>{
-    res.send(`file uploaded\n ${req.file}`);
-})
 
 app.listen(8000,(req,res)=>{
     console.log("path: " + __dirname);
