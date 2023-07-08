@@ -25,20 +25,23 @@ app.use("/",(req,res,next)=>{
 
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,"public")
+        cb(null,"public/images")
     },
     filename:(req,file,cb)=>{
-        crypto.pseudoRandomBytes(16, function (err, raw) {
+        /*crypto.pseudoRandomBytes(16, function (err, raw) {
             if (err) return cb(err)
             cb(null, raw.toString('hex') + path.extname(file.originalname))
-          })
+          })*/
+        //let fileExt = file.originalname.split('.');  
+        cb(null,`${Date.now()+file.originalname}`);
     }
 })
 
 const upload = multer({storage:storage});
 app.post('/fileUpload',upload.single("file"),(req,res)=>{
+    console.log(req.body.name);
     console.log(req.file)
-    res.send('file uploaded');
+    res.send(`file uploaded ${req.file.originalname}`);
 })
 
 app.use('/files',express.static(path.join(__dirname,'public')));
