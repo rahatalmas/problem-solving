@@ -38,11 +38,13 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage:storage});
-app.post('/fileUpload',upload.single("file"),(req,res)=>{
+app.post('/fileUpload',upload.array("file"),(req,res)=>{
     console.log(req.body.name);
-    console.log(req.file)
-    res.send(`file uploaded ${req.file.originalname}`);
+    console.log(req.files)
+    res.json(`file uploaded `);
 })
+
+
 
 app.use('/files',express.static(path.join(__dirname,'public')));
 app.use('/images',express.static(path.join(__dirname,'public/images')));

@@ -21,6 +21,7 @@ const updateData = (req,res)=>{
     res.send(`delete done \nid: ${req.params.id} \nname: ${name} \nplanet ${planet}`);
  }
 
+
  module.exports = {
     getData,
     postData,
