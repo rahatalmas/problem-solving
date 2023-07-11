@@ -1,6 +1,6 @@
 const getData = (req,res)=>{
     console.log(req.headers);
-    res.send("hello world");
+    res.send('<h1>Hello World</h1>')
 }
 
 const postData = (req,res)=>{
