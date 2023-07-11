@@ -2,7 +2,6 @@
 using namespace std;
 
 
-
 void print(int a,int b,int c, char pat){
          if(a<10){
             cout << 0 << a << pat;
