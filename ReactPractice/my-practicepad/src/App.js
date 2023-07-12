@@ -4,8 +4,9 @@ import { useState } from 'react';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Nav from './nav/Nav.js';
 import Form from './components/Form.js';
+import Home from './components/Home.js';
 import ErrorPage from './components/ErrorPage.js';
-
+import {TodoLoader} from './loaderFunctions/LoaderFunctions.js';
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
        children:[
           {
             path:"/",
-            element:logged?<h1>Home</h1>:<Form loggedSetter={loggedSetter}/>
+            element:logged?<Home/>:<Form loggedSetter={loggedSetter}/>,
+            loader:TodoLoader,
           },
           {
             path:"/books",
