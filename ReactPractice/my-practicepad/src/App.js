@@ -6,11 +6,11 @@ import Form from './components/Form';
 const router = createBrowserRouter([
   {
      path:"/",
-     element:<Form/>
+     element: <h1>Home</h1>
   },
   {
-     path:"/home",
-     element:<h1>Home</h1>  
+     path:"/form",
+     element:<Form/> 
   }
 ])
 
