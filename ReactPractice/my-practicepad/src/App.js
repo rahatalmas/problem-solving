@@ -9,8 +9,9 @@ import ErrorPage from './components/ErrorPage.js';
 
 function App() {
 
-  const [logged,setLogged] = useState(false);
+  const [logged,setLogged] = useState(localStorage.getItem("logged" || false));
   const loggedSetter = () =>{
+    localStorage.setItem("logged",true);
     setLogged(true);
   }
 
