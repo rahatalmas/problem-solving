@@ -39,20 +39,20 @@ const Form = ({loggedSetter}) =>{
         <>
           <div className='form-container'>
                 <form onSubmit={formSubmitHandler}>
-                    <label for="name">Your Full Name</label><br/>
-                    <input type='text' name='name' value={name} placeholder='type your name...' onChange={nameChanger}/>
+                    <label htmlFor="name">Your Full Name</label><br/>
+                    <input  type='text' id='name' name='name' value={name} placeholder='type your name...' onChange={nameChanger}/>
                     <br/>
-                    <label for="email">Email</label><br/>
-                    <input type='email' name='email' value={email} placeholder='your email...' onChange={emailChanger} />
+                    <label htmlFor="email">Email</label><br/>
+                    <input type='email' id='email' name='email' value={email} placeholder='your email...' onChange={emailChanger} />
                     <br/>
-                    <label for="password">Password</label><br/>
-                    <input type='password' name='password' value={password} placeholder='set password...' onChange={passwordChanger} />
+                    <label htmlFor="password">Password</label><br/>
+                    <input type='password' id='password' name='password' value={password} placeholder='set password...' onChange={passwordChanger} />
                     <br/>
-                    <label for="image">Profile Picture </label><br/>
-                    <input type='file' name='image' multiple placeholder='choose photo' onChange={filechanger} />
+                    <label htmlFor="image">Profile Picture </label><br/>
+                    <input type='file' name='image' id='image' multiple placeholder='choose photo' onChange={filechanger} />
                     <br/>
-                    <label for="agree">Term and conditions</label>
-                    <input type='checkbox' name='agree' onChange={checkboxChanger} />
+                    <label htmlFor="agree">Term and conditions</label>
+                    <input type='checkbox' id='agree' name='agree' onChange={checkboxChanger} />
                     <br/>
                     <input type='submit' value="submit" />
                 </form>
@@ -65,7 +65,5 @@ export default Form;
 
 
 /*
-
-
 
 */
