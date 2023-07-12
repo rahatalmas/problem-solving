@@ -7,6 +7,10 @@ const router = createBrowserRouter([
   {
      path:"/",
      element:<Form/>
+  },
+  {
+     path:"/home",
+     element:<h1>Home</h1>  
   }
 ])
 
