@@ -25,6 +25,10 @@ function App() {
             element:logged?<h1>Home</h1>:<Form loggedSetter={loggedSetter}/>
           },
           {
+            path:"/books",
+            element:<h1>Books Lists</h1>
+          },
+          {
             path:"/hooks",
             element:<h1>practice Hooks</h1>
           }
