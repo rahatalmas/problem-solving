@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Form = () =>{
+const Form = ({loggedSetter}) =>{
     
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
@@ -32,6 +32,7 @@ const Form = () =>{
             const formData = new FormData();
             formData.append('images',files);
             console.log(formData.get('images'));
+            loggedSetter();
     }
    
     return(
