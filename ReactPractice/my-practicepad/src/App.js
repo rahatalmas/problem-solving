@@ -6,7 +6,7 @@ import Nav from './nav/Nav.js';
 import Form from './components/Form.js';
 import Home from './components/Home.js';
 import ErrorPage from './components/ErrorPage.js';
-import {TodoLoader} from './loaderFunctions/LoaderFunctions.js';
+import {BlogLoader} from './loaderFunctions/LoaderFunctions.js';
 
 function App() {
 
@@ -19,17 +19,18 @@ function App() {
   const router = createBrowserRouter([
     {
        path:"/",
-       element:<Nav/>,
+       element:logged?<Nav/>:<Form loggedSetter={loggedSetter}/>,
        errorElement:<ErrorPage/>,
        children:[
           {
             path:"/",
-            element:logged?<Home/>:<Form loggedSetter={loggedSetter}/>,
-            loader:TodoLoader,
+            element:<Home/>,
+            loader:BlogLoader,
           },
           {
-            path:"/books",
-            element:<h1>Books Lists</h1>
+            path:"/blogs",
+            element:<h1>Blogs Lists</h1>,
+            loader:BlogLoader
           },
           {
             path:"/hooks",

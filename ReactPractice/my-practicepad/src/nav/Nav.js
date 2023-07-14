@@ -1,18 +1,20 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-
+import '../cssFiles/Nav.css'
 const Nav = () =>{
     return(
         <>
-          <div className='nav-container'>
-             <NavLink className="nav-links" to="/">Home</NavLink>
-             <NavLink className="nav-links" to="/books">Books</NavLink>
-             <NavLink className="nav-links" to="/hooks">HookPractice</NavLink>
-          </div>
-          <Outlet/>
-          <footer>
-            <p>Site Map</p>
-          </footer>
+            <section className='nav-container'>
+                <NavLink className="nav-links" to="/">Home</NavLink>
+                <NavLink className="nav-links" to="/blogs">Blogs</NavLink>
+                <NavLink className="nav-links" to="/hooks">HookPractice</NavLink>
+            </section>
+            <section className='outlet-section'>
+                <Outlet/>
+            </section>
+            <footer className='site-map'>
+                <p>Site Map</p>
+            </footer>
         </>
     );
 }

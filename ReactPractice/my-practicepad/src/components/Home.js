@@ -3,19 +3,20 @@ import {useLoaderData} from 'react-router-dom';
 
 const Home = () =>{
 
-    const todos = useLoaderData();
+    const blogs = useLoaderData();
 
     return(
         <>
            <div className='home-container'>
-              {
-                todos.map(todo=>(
+              { typeof(blogs)  !== "string" ?
+                blogs.slice(1,10).map(todo=>(
                     <div key={todo.id}>
-                       <p>ID: {todo.id}</p>
-                       <p>Title: {todo.title}</p>
-                       <p>Status: {todo.completed?"yes":"no"}</p>
+                        <h3>{todo.title}</h3>
+                        <p>{todo.body}</p>
                     </div>
                 ))
+                :
+                <h1>Sorry Data {blogs}</h1>
               }
            </div>
         </>
