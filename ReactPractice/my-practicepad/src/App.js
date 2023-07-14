@@ -9,6 +9,7 @@ import Blogs from './components/Blogs.js';
 import SingleBlog from './components/SingleBlog.js';
 import ErrorPage from './components/ErrorPage.js';
 import {BlogLoader} from './loaderFunctions/LoaderFunctions.js';
+import { SingleBlogLoader } from './loaderFunctions/LoaderFunctions.js';
 
 function App() {
 
@@ -36,7 +37,8 @@ function App() {
           },
           {
             path:"blogs/:blogId",
-            element:<SingleBlog/>
+            element:<SingleBlog/>,
+            loader:SingleBlogLoader,
           },
           {
             path:"/hooks",
