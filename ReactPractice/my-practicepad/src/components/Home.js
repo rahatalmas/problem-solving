@@ -9,7 +9,7 @@ const Home = () =>{
         <>
            <div className='home-container'>
               { typeof(blogs)  !== "string" ?
-                blogs.slice(1,10).map(todo=>(
+                blogs.slice(1,6).map(todo=>(
                     <div key={todo.id}>
                         <h3>{todo.title}</h3>
                         <p>{todo.body}</p>

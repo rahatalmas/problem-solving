@@ -5,6 +5,8 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Nav from './nav/Nav.js';
 import Form from './components/Form.js';
 import Home from './components/Home.js';
+import Blogs from './components/Blogs.js';
+import SingleBlog from './components/SingleBlog.js';
 import ErrorPage from './components/ErrorPage.js';
 import {BlogLoader} from './loaderFunctions/LoaderFunctions.js';
 
@@ -29,8 +31,12 @@ function App() {
           },
           {
             path:"/blogs",
-            element:<h1>Blogs Lists</h1>,
-            loader:BlogLoader
+            element:<Blogs/>,
+            loader:BlogLoader,
+          },
+          {
+            path:"blogs/:blogId",
+            element:<SingleBlog/>
           },
           {
             path:"/hooks",
