@@ -21,3 +21,4 @@ export const SingleBlogLoader = async ({request,params}) =>{
       return err.message;
    }
 }
+

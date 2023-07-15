@@ -8,8 +8,8 @@ import Home from './components/Home.js';
 import Blogs from './components/Blogs.js';
 import SingleBlog from './components/SingleBlog.js';
 import ErrorPage from './components/ErrorPage.js';
-import {BlogLoader} from './loaderFunctions/LoaderFunctions.js';
-import { SingleBlogLoader } from './loaderFunctions/LoaderFunctions.js';
+import { BlogLoader } from './Functions/LoaderFunctions.js';
+import { SingleBlogLoader } from './Functions/LoaderFunctions.js';
 
 function App() {
 
@@ -26,7 +26,8 @@ function App() {
        errorElement:<ErrorPage/>,
        children:[
           {
-            path:"/",
+            //path:"/",
+            index:true,
             element:<Home/>,
             loader:BlogLoader,
           },
