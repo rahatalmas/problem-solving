@@ -10,7 +10,7 @@ const routes = require('./routes/routes.js');
 //app.use(express.json());
 //app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-app.use(bodyParser.json({}));
+app.use(bodyParser.json({urlencoded:true}));
 // for parsing application/xwww-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true})); //limit: "50mb",
 app.use(cors());
