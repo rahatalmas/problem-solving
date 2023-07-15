@@ -10,6 +10,7 @@ import SingleBlog from './components/SingleBlog.js';
 import ErrorPage from './components/ErrorPage.js';
 import { BlogLoader } from './Functions/LoaderFunctions.js';
 import { SingleBlogLoader } from './Functions/LoaderFunctions.js';
+import { BlogPostAction } from './Functions/ActionFunctions.js';
 
 function App() {
 
@@ -35,6 +36,12 @@ function App() {
             path:"/blogs",
             element:<Blogs/>,
             loader:BlogLoader,
+            children:[
+              {
+                path:"postblog",
+                action:BlogPostAction
+              }
+            ]
           },
           {
             path:"blogs/:blogId",

@@ -11,12 +11,11 @@ const Blogs = () =>{
                 <Form method='post' action='postblog'>
                    <label htmlFor="title">Title</label>
                    <input className='input' type='text' name='title' placeholder='add title...' />
-                   <label htmlFor="body">Body</label>
-                   <input className='input' type='text' name='body' placeholder='write your blog...' />
+                   <label htmlFor="content">Body</label>
+                   <input className='input' type='text' name='content' placeholder='write your blog...' />
                    <input type='submit' value="Post"/>
                 </Form>
              </div>
-             
              <div className='blogs'>
              {
                 blogs.map(blog=>(

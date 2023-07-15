@@ -6,7 +6,7 @@ const getData = (req,res)=>{
 const postData = (req,res)=>{
     const data = req.body;
     console.log(data);
-    res.send(`post done \ndata :\n${data.name}\n${data.planet}`);
+    res.send(`post done \ndata :\n${data.title}\n${data.content}`);
 }
 
 const updateData = (req,res)=>{
