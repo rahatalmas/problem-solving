@@ -1,6 +1,9 @@
+const BlogsData = require('../dummyData/BlogsData');
+
 const getData = (req,res)=>{
-    console.log(req.headers);
-    res.send('<h1>Hello World</h1>')
+    //console.log(req.headers);
+     console.log(typeof(BlogsData));
+     res.send(BlogsData);
 }
 
 const postData = (req,res)=>{

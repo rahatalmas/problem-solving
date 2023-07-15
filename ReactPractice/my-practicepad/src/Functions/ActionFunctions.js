@@ -1,4 +1,4 @@
-import {json, redirect} from 'react-router-dom';
+import {redirect} from 'react-router-dom';
 import axios from 'axios';
 //import { head } from '../../../../NodePractice/routes/routes';
 

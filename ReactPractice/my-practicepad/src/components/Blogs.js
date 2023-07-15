@@ -18,14 +18,18 @@ const Blogs = () =>{
              </div>
              <div className='blogs'>
              {
+                typeof(blogs) === "string" 
+                      ?
+                <div><p>No data Loaded...</p></div> 
+                      :
                 blogs.map(blog=>(
-                    <div className='blog-card' key={blog.id}>
-                       <NavLink to={`${blog.id}`}>
-                            <h3>{blog.title}</h3>
-                            <p>{blog.body}</p>
-                       </NavLink>
-                    </div>
-                ))
+                  <div className='blog-card' key={blog.id}>
+                     <NavLink to={`${blog.id}`}>
+                          <h3>{blog.title}</h3>
+                          <p>{blog.content}</p>
+                     </NavLink>
+                  </div>
+              ))
              }
              </div>
           </div>
