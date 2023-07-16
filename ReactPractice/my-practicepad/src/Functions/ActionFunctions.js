@@ -15,9 +15,3 @@ export const BlogPostAction = async ({request,params}) =>{
   })
      return redirect('/blogs');
 }
-
-/*
-
-
-
-*/

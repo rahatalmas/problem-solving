@@ -11,7 +11,6 @@ export const BlogLoader = async () =>{
    }
 }
 
-
 export const SingleBlogLoader = async ({request,params}) =>{
    try{
       const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.blogId}`)
@@ -21,4 +20,3 @@ export const SingleBlogLoader = async ({request,params}) =>{
       return err.message;
    }
 }
-
