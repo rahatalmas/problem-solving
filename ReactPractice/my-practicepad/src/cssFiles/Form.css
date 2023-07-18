@@ -1,0 +1,13 @@
+.form-container{
+    margin:100px auto;
+    width: 50%;
+}
+label{
+    width: 100%;
+}
+input{
+    width: 100%;
+    box-sizing: border-box;
+    padding:15px 10px;
+    margin:10px 0px;
+}
