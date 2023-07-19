@@ -41,21 +41,21 @@ const Form = ({loggedSetter}) =>{
           <div className='form-container'>
                 <form onSubmit={formSubmitHandler}>
                     <label htmlFor="name">Your Full Name</label><br/>
-                    <input  type='text' id='name' name='name' value={name} placeholder='type your name...' onChange={nameChanger}/>
+                    <input required  type='text' id='name' name='name' value={name} placeholder='type your name...' onChange={nameChanger}/>
                     <br/>
                     <label htmlFor="email">Email</label><br/>
-                    <input type='email' id='email' name='email' value={email} placeholder='your email...' onChange={emailChanger} />
+                    <input required type='email' id='email' name='email' value={email} placeholder='your email...' onChange={emailChanger} />
                     <br/>
                     <label htmlFor="password">Password</label><br/>
-                    <input type='password' id='password' name='password' value={password} placeholder='set password...' onChange={passwordChanger} />
+                    <input required type='password' id='password' name='password' value={password} placeholder='set password...' onChange={passwordChanger} />
                     <br/>
                     <label htmlFor="image">Profile Picture </label><br/>
-                    <input type='file' name='image' id='image' multiple placeholder='choose photo' onChange={filechanger} />
+                    <input required type='file' name='image' id='image' multiple placeholder='choose photo' onChange={filechanger} />
                     <br/>
                     <label htmlFor="agree">Term and conditions</label>
-                    <input type='checkbox' id='agree' name='agree' onChange={checkboxChanger} />
+                    <input required type='checkbox' id='agree' name='agree' onChange={checkboxChanger} />
                     <br/>
-                    <input type='submit' value="submit" />
+                    <input required type='submit' value="submit" />
                 </form>
           </div>
         </>
@@ -63,8 +63,3 @@ const Form = ({loggedSetter}) =>{
 }
 
 export default Form;
-
-
-/*
-
-*/

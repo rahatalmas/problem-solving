@@ -1,4 +1,4 @@
-const BlogsData = require('../dummyData/BlogsData')
+const BlogsData = require('../dummyData/BlogsData');
 
 const getData = (req,res) => {
      console.log(req.headers);
@@ -12,7 +12,7 @@ const postData = (req,res) => {
     res.send(`post done \ndata :\n${data.title}\n${data.content}`);
 }
 
-const updateData = (req,res) => {
+const updateData = (req,res) => {  
     let {name,planet} = req.query;
     console.log(req.params.id, name, planet);
     res.send(`update done \nid: ${req.params.id} \nname: ${name} \nplanet ${planet}`);
