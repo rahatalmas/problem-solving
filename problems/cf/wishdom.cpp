@@ -17,6 +17,7 @@ int main(){
                 if(hq < b){
                     hq = b;
                     winner = i+1;
+                    
                 }
             }
         }
