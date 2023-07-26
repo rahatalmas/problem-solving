@@ -52,8 +52,15 @@ console.log("SubArray from end:", subArray.slice(-5));
 console.log("subArray negative indexing:",arr.slice(-5,-1));
 
 // iterations:
-//forEach()
-console.log("\nusing forEach() method: ");
+//forEach(fn(element,index,arr))
+console.log("\nusing forEach() method:\n");
 arr.forEach((element,index,arr)=>{
     console.log(element);
 })
+
+//map(fn(element,index,array))
+console.log("\n using map() method:\n")
+arr.map((element,index,arr)=>{
+    console.log(`index:${index} -> Element: ${element}`);
+})
+
